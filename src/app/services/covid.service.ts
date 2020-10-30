@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Response } from '../models/response';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { delay, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +21,8 @@ export class CovidService {
           recovered: data.recovered,
           flag: data.countryInfo.flag,
         };
-      })
+      }),
+      delay(1500)
     );
   }
 }
