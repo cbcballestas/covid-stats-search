@@ -1,0 +1,31 @@
+<div class="container mt-4 w-60" [hidden]="!visible">
+  <div class="card mx-auto mb-4">
+    <div class="row no-gutters">
+      <div class="col-md-4 my-auto">
+        <img
+          [src]="data.flag"
+          class="img-fluid img-thumbnail"
+          alt="Flag Covid Stats"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title">{{ data.country }}</h4>
+          <div class="card-text">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-center">
+                Casos: <b>{{ data.cases }}</b>
+              </li>
+              <li class="list-group-item text-center">
+                Muertos: <b class="text-danger">{{ data.deaths }}</b>
+              </li>
+              <li class="list-group-item text-center">
+                Recuperados: <b class="text-success">{{ data.recovered }}</b>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
