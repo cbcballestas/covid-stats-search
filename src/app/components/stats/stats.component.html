@@ -4,7 +4,7 @@
       <div class="col-md-4 my-auto">
         <img
           [src]="data.flag"
-          class="img-fluid img-thumbnail"
+          class="img-fluid img-thumbnail rounded mx-auto d-block"
           alt="Flag Covid Stats"
         />
       </div>
@@ -14,13 +14,13 @@
           <div class="card-text">
             <ul class="list-group list-group-flush">
               <li class="list-group-item text-center">
-                Casos: <b>{{ data.cases }}</b>
+                Cases : <b>{{ data.cases }} 😷</b>
               </li>
               <li class="list-group-item text-center">
-                Muertos: <b class="text-danger">{{ data.deaths }}</b>
+                Deaths : <b class="text-danger">{{ data.deaths }} ✝</b>
               </li>
               <li class="list-group-item text-center">
-                Recuperados: <b class="text-success">{{ data.recovered }}</b>
+                Recovered : <b class="text-success">{{ data.recovered }} 💚 </b>
               </li>
             </ul>
           </div>

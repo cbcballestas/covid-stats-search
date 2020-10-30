@@ -9,25 +9,29 @@ import { Response } from '../../models/response';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit, OnDestroy {
+  loading: boolean;
   visible: boolean;
   data: Response;
 
   subscription: Subscription = new Subscription();
 
-  constructor(private covidService: CovidService) {
+  constructor(private covidService: CovidService) {}
+
+  ngOnInit(): void {
     this._resetData();
   }
-
-  ngOnInit(): void {}
 
   buscar(value: string): void {
     if (!value) {
       return alert('You must enter a country');
     }
 
+    this.loading = true;
+
     this.subscription.add(
       this.covidService.findByCountry(value).subscribe(
         (res) => {
+          this.loading = false;
           this.visible = true;
           this.data = res;
         },
@@ -40,6 +44,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   private _resetData(): void {
+    this.loading = false;
     this.visible = false;
     this.data = {
       country: '',

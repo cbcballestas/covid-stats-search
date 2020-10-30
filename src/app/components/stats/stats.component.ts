@@ -7,6 +7,6 @@ import { Response } from '../../models/response';
   styleUrls: ['./stats.component.css'],
 })
 export class StatsComponent {
-  @Input() visible = false;
+  @Input() visible: boolean;
   @Input() data: Response;
 }
