@@ -22,7 +22,7 @@ export class CovidService {
           flag: data.countryInfo.flag,
         };
       }),
-      delay(1500)
+      delay(1000)
     );
   }
 }
